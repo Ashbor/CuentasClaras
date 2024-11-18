@@ -26,9 +26,14 @@
                 "output": "assets"
               },
               {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
+                "glob": "manifest.webmanifest",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "icons/**/*",
+                "input": "src/assets",
+                "output": "assets/icons"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
@@ -106,11 +111,6 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
