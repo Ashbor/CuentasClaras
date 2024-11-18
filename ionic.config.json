@@ -1,0 +1,13 @@
+{
+  "name": "FinanceBuddy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://v6.exchangerate-api.com/v6/fcb282bcd5b82df55fab1f3a/latest"
+    }
+  ]
+}

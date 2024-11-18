@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Gasto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="button-container">
+    <ion-button
+    *ngFor="let category of categories"
+    (click)="selectCategory(category)"
+    class="circular-button"
+    [ngClass]="{ selected: selectedCategory === category.name }" 
+    [ngStyle]="{ 'background-color': category.color }"
+    expand="block"
+  >
+    <div class="button-text">{{ category.name }}</div>
+  </ion-button>
+  </div>
+
+  <!-- Campo de entrada para la cantidad -->
+  <ion-item>
+    <ion-label position="stacked">Cantidad</ion-label>
+    <ion-input type="number" [(ngModel)]="cantidad" placeholder="Ingrese la cantidad"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="addGasto()" [disabled]="!selectedCategory || cantidad <= 0">
+    Agregar Gasto
+  </ion-button>
+</ion-content>

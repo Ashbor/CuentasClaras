@@ -1,0 +1,20 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root {
+    --ion-color-primary: #55de55; /* Verde claro */
+    --ion-color-primary-rgb: 144, 238, 144; /* RGB para el verde claro */
+    --ion-color-primary-contrast: #ffffff; /* Contraste del texto sobre el color primario */
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #52d252; /* Versión más oscura del verde claro */
+    --ion-color-primary-tint: #a3f3a3; /* Versión más clara del verde claro */
+  }
+
+  :root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+  }
+  
+  [color-theme='dark'] {
+    --ion-background-color: #222428;
+    --ion-text-color: #ffffff;
+  }

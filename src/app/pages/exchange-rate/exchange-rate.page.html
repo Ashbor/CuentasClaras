@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Consultar Tipo de Cambio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="consultExchangeRate()">
+    <ion-item>
+      <ion-label>Moneda Origen</ion-label>
+      <ion-select [(ngModel)]="fromCurrency" name="fromCurrency">
+        <ion-select-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Moneda Destino</ion-label>
+      <ion-select [(ngModel)]="toCurrency" name="toCurrency">
+        <ion-select-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cantidad:</ion-label>
+      <br>
+      <br>
+      <ion-input type="number" [(ngModel)]="amount" name="amount" placeholder="Ingresa la cantidad"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Consultar</ion-button>
+  </form>
+
+  <div *ngIf="conversionResult">
+    <p>{{ amount }} {{ fromCurrency }} = {{ conversionResult }} {{ toCurrency }}</p>
+  </div>
+</ion-content>

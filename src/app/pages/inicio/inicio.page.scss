@@ -1,0 +1,77 @@
+.add-category-fab {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+ion-item,
+ion-label,
+ion-card-title, 
+p {
+  color: var(--ion-text-color);
+}
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+  }
+  
+  canvas {
+    width: 100% !important; 
+    height: 100% !important; 
+  }
+  
+  .add-category-fab {
+    position: absolute;
+    bottom: 10px;  // Ajusta la distancia respecto al gráfico
+    right: -20px;   // Ajusta la distancia respecto al gráfico
+  }
+  
+  /* Para pantallas grandes, aumentar el tamaño del gráfico */
+@media (min-width: 1024px) {
+  #myPieChart {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Para pantallas pequeñas, ajustar márgenes */
+@media (max-width: 600px) {
+  ion-button {
+    margin: 10px 0;
+  }
+  #myPieChart {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.category-button {
+  margin: 4px;
+  width: 100%;
+}
+
+ion-card {
+  margin: 10px 0;
+}
+
+ion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ion-button {
+  margin-left: 8px;
+}

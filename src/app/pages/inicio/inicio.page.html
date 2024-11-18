@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Gastos Mensuales</ion-title>
+    <ion-toggle (ionChange)="toggleTheme($event)" slot="end"></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="position: relative; text-align: center;">
+    <canvas id="myPieChart"></canvas>
+
+    <!-- Botón circular -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="goToAddCategory()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Categorías</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <div *ngFor="let category of categorySpendingArray; let i = index">
+          <ion-item>
+            <ion-label>
+              <span>{{ category.key }}: {{ category.value | currency }}</span>
+            </ion-label>
+            <ion-button (click)="editCategory(i)" fill="outline" color="secondary">
+              Editar
+            </ion-button>
+            <ion-button (click)="deleteCategory(i)" fill="outline" color="danger">
+              Eliminar
+            </ion-button>
+          </ion-item>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gastos Totales</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Total: {{ totalSpending | currency }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" routerLink="/exchange-rate">Consultar Tipo de Cambio</ion-button>
+</ion-content>
